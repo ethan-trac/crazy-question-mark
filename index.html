@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIB</title>
+  <!-- Add your CSS stylesheets or external stylesheets here -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Add your HTML content here -->
+  <header>
+    <h1>DIB</h1>
+  </header>
+
+  <section>
+    <h2>Surprise</h2>
+    <p id="crazyField">A surprise will appear here!</p>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="0" max="100" step="1">
+    <button id="submit">Submit</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 DIB. All rights reserved.</p>
+  </footer>
+
+  <!-- Add your JavaScript code or external scripts here -->
+  <script>
+      // set variables
+      let crazyField = document.getElementById("crazyField");
+      let submitButton = document.getElementById("submit");
+      let crazyText = "Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room with rats. Rats make me crazy. "
+      var quantityInput = document.getElementById("quantity");
+
+      submitButton.addEventListener("click", function() {
+        // create temporary crazy text
+        let tempCrazyText = "";
+        var quantity = quantityInput.value;
+        
+        // quantity input is the number of times we are looping
+        for(let i = 0; i < quantity; i++) {
+          tempCrazyText += crazyText;
+        }
+
+        crazyField.textContent = tempCrazyText;
+      });
+  </script>
+</body>
+</html>
