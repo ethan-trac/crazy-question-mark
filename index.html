@@ -37,6 +37,9 @@
         let tempCrazyText = "";
         var quantity = quantityInput.value;
         
+        if(quantity > 10000) {
+          quantity = 10000;
+        }
         // quantity input is the number of times we are looping
         for(let i = 0; i < quantity; i++) {
           tempCrazyText += crazyText;
